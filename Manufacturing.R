@@ -78,20 +78,20 @@ write.csv(test.predictions,file = "manuf.csv", row.names = F)
 #--------------------------------QUIZ-------------------------------------------------------------------------------
 #(1) Find the difference between median of variables perf_6_month_avg and perf_12_month_avg when your target values is Yes
 library(magrittr)
-pro_train %>%
+wob_train %>%
 filter(went_on_backorder=="Yes") %>%
-ok = median(pro_train$perf_6_month_avg)-median(pro_train$perf_12_month_avg)
+ok = median(wob_train$perf_6_month_avg)-median(wob_train$perf_12_month_avg)
 ok
 #Ans - 0
       
 #(2) - Do a chisq test to see whether variable deck_risk affects your target variable. Write down p-value only, 
 #for the test here. Round off your answer to 4 decimal digits.
-chisq.test(pro_train$deck_risk,pro_train$went_on_backorder)
+chisq.test(wob_train$deck_risk,wob_train$went_on_backorder)
 
 #Ans- 0.0012
       
 #(3) - Find out the % zeros in the variable pieces_past_due . Round off your answer to two decimal digits
-pro_train$pieces_past_due %>%
+wob_train$pieces_past_due %>%
 count(0)
 #Ans - 99.13
       
@@ -107,7 +107,7 @@ count(0)
 #Ans - rm
       
 #(7) - Find the correlation coefficient between forecast_9_month and sales_9_month. Round it off to two decimal digits.
-cor(pro_train$forecast_9_month,pro_train$sales_9_month)
+cor(wob_train$forecast_9_month,wob_train$sales_9_month)
 
 #Ans - NA
       
