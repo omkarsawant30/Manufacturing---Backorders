@@ -101,7 +101,8 @@ count(0)
 #(5) - If there are 30 predictor variables in the data being considered for classification with function randomForest , 
 #what would be default value of argument mtry.
 
-#Ans - 5
+#Ans - It is argued that the default value of mtry for random forests is square root of total number of features (for classification) 
+      #and number of features divided by 3 (for regression), so the answer here is sq.root of 30 i.e 5.47 i.e 5
       
 #(6) - Which function can be used to remove objects from memory?
 #Ans - rm
